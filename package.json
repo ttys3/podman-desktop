@@ -1,6 +1,6 @@
 {
   "name": "container-desktop",
-  "version": "0.0.2-next",
+  "version": "0.0.202204111000-db5cd49",
   "license": "apache-2.0",
   "private": true,
   "engines": {
