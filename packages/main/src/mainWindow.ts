@@ -39,6 +39,17 @@ async function createWindow() {
   if (isMac) {
     browserWindowConstructorOptions.titleBarStyle = 'hiddenInset';
   }
+
+  // native wayland support according to vscode code
+  // ref https://github.com/microsoft/vscode/blob/fa8d1063f6ab829e848575cf402d8bca74bcc2d4/src/vs/platform/windows/electron-main/window.ts#L241
+  // only do this if it is under Linux and is using wayland
+  if (true) {
+    browserWindowConstructorOptions.titleBarStyle = 'hidden';
+    if (!isMac) {
+	  browserWindowConstructorOptions.frame = false;
+    }
+  }
+
   const browserWindow = new BrowserWindow(browserWindowConstructorOptions);
 
   setTimeout(() => {
